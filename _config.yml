@@ -4,7 +4,7 @@ markdown:            kramdown
 highlighter:         rouge
 
 # Permalinks
-permalink:           /:pretty
+permalink:           /:title
 
 
 # Setup
@@ -16,11 +16,11 @@ tagline:             'tagline'
 description:         'description'
 url:                 http://wethinkideas.org
 rss:                 rss feed url
-baseurl:             '/'
-baseurl_posts_img:   '/assets/images/posts/'
-baseurl_featured_img: '/assets/images/hero/'
-baseurl_featured_thumbnail: '/assets/images/thumbnail/'
-baseurl_javascripts: '/assets/javascripts/'
+baseurl:             '/mickey'
+baseurl_posts_img:   '/mickey/assets/images/posts/'
+baseurl_featured_img: '/mickey/assets/images/hero/'
+baseurl_featured_thumbnail: '/mickey/assets/images/thumbnail/'
+baseurl_javascripts: '/mickey/assets/javascripts/'
 icon:                your site icon path # /assets/img/icon.png [best 300px X 300px]
 disqus:              disqus_shortname # get it on https://disqus.com/admin/
 
