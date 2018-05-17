@@ -1,131 +1,112 @@
-# Mickey
+## Jasper2
 
-Mickey is a minimal one-column, responsive theme for [Jekyll](http://jekyllrb.com).
+[![Build Status](https://travis-ci.org/jekyller/jasper2.svg?branch=master)](https://travis-ci.org/jekyller/jasper2)
+[![Ruby](https://img.shields.io/badge/ruby-2.4.2-blue.svg?style=flat)](http://travis-ci.org/jekyller/jasper2)
+[![Jekyll](https://img.shields.io/badge/jekyll-3.6.2-blue.svg?style=flat)](http://travis-ci.org/jekyller/jasper2)
 
-It's inspired by [Hyde](http://hyde.getpoole.com), [Medium](http://medium.com), and [Squarespace](http://squarespace.com).
+This is a full-featured port of Ghost's default theme [Casper](https://github.com/tryghost/casper)
+*v2.1.9* for [Jekyll](https://jekyllrb.com/) / [GitHub Pages](https://pages.github.com/).
 
-![Mickey screenshots](/assets/images/demo.png)
+## Live Demo
 
-See Mickey in action with [the demo site](http://vincentchan.github.io/mickey) or [my personal blog](http://aneverendingdream.com).
+[Ghost's Casper](https://demo.ghost.io) // [Jasper2](https://jekyller.github.io/jasper2)
 
-## Contents
+![home page](https://raw.githubusercontent.com/jekyller/jasper2/master/assets/screenshot-desktop.jpg)
 
-- [Installation](#installation)
-- [Options](#options)
-  - [Post front matter](#post-front-matter)
-  - [Identity](#identity)
-  - [Typography](#typography)
-  - [Images](#images)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
 
-## Installation
+## Features
 
-Mickey requires [Jekyll](http://jekyllrb.com/) 2.x. and [Gulp](http://gulpjs.com/) for workflow automation.
+* Out of the box support for multiple authors (via `_data/authors.yml`)
+* Full author information including: picture, bio, website, twitter, facebook, etc.
+* Tag description(s) and personalised covers (via `_data/tags.yml`)
+* Related posts view at the bottom of each post
+* All Ghost default pages: Author page(s), Tag page(s), About page(s), 404, etc.
+* Pagination (infinite scrolling or standard pagination, i.e. posts across multiple pages)
+* Atom Feeds by [Jekyll-feed](https://github.com/jekyll/jekyll-feed)
+* Toggleable subscribe button (requires an external service)
+* Code Syntax Highlight with [highlight.js](https://highlightjs.org/)
+* Support for Google Analytics tracking
+* Support for Disqus comments (not Ghost standard)
 
-Make sure to run `gem update jekyll` if you aren’t on the latest version or `gem install jekyll` if this is your first time installing it.
 
-If you want to use Mickey, please follow these steps:
+## Getting Started
 
-1. Fork the [Mickey](https://github.com/vincentchan/mickey) repo.
-2. Clone the repo you just forked and rename it.
-3. Run `npm install` to install the dependencies for the theme contained in `package.json`
-4. Update `_config.yml` with your own info and replace demo posts and pages with your own. Full details below.
+### Deployment
 
-## Options
+**Important:**  For security reasons, Github does not allow plugins (under `_plugins/`) when
+deploying with Github Pages. This means:
 
-Mickey includes some customizable options:
+**1)** that we need to generate your site locally (more details below) and push the resulting
+HTML (the contents of `_site/` or `../jasper2-pages/`) to a Github repository, that GitHub Pages
+then host;
 
-### Post front matter
+**2)** built the site with [travis-ci](https://travis-ci.org/) (with goodies from
+[jekyll-travis](https://github.com/mfenner/jekyll-travis)) automatically pushing the
+generated HTML files to a *gh-pages* branch.
+This later approach is the one I am currently using to generate the live demo.
 
-By default, we use the following:
+**3)** deploy the static website with Jekyll-compatible hosters, such as https://www.netlify.com/, that allow for deployment from the Github repo and publish the website using CDNs. Netlify has a free starter offer.
 
-```
----
-layout:           post
-title:            "your post title"
-date:             2015-02-11T13:04:19+05:45 # XML Schema Date/Time
-last_modified_at: 2015-03-15T05:20:00+05:45 # last page modified date/time
-excerpt:          "for meta description" # Optional for overwriting content excerpt
-categories:       your post categories # ["category1"] - best is to have one category in a post
-tags:             your post tags # ["tag1", "tag2", "tag3"] - you can have several post tags
-image:
-  feature: your post featured image file name # image.jpg, suggested size:  2000x700px
-  topPosition: 0px # top position for featured image if needed
-bgContrast: dark # Featured image contrast
-bgGradientOpacity: darker # darker or lighter - control featured image opacity
----
-```
+For option **1)** simply clone this repository (*master branch*), and then run
+`bundle exec jekyll serve` inside the directory. Upload the resulting `_site/` (or `../jasper2-pages/`)
+contents to your repository (*master branch* if uploading as your personal page
+(e.g. username.github.io) or *gh-pages branch* if uploading as a project page
+(as for the [demo](https://github.com/jekyller/jasper2/tree/gh-pages)).
 
-### Identity
+For option **2)** you will need to set up travis-ci for your personal fork. Briefly all you
+need then is to change your details in *[\_config.yml](_config.yml)* so that you can push
+to your github repo. You will also need to generate a secure key to add to your
+*[.travis.yml](.travis.yml)* (you can find more info on how to do it in that file).
+Also make sure you read the documentation from
+[jekyll-travis](https://github.com/mfenner/jekyll-travis). This approach has clear
+advantages in that you simply push your file changes to GitHub and all the HTML files
+are generated for you and pushed to *gh-pages*. Also you get to know if everything is
+still fine with your site builds. Don't hesitate to contact me if you still have any
+issues (see below about issue tracking).
 
-To replace logos with your own, simply update the following files in `assets/images/`:
+### Author Pages
 
-- `logo-white.svg`
-- `logo-black.svg`
-- `logo-text-white.svg`
-- `logo-text-black.svg`
+In order to properly generate author pages you need to rename the field *author* in the
+front matter of every post to match that of your each author's *username* as defined
+in the *[\_data/authors.yml](_data/authors.yml)* file.
+With the latest update, multiple author blogs are now supported out of the box.
 
-### Typography
+### Compiling Styles
 
-Vertical rhythm and spacing are mostly handled by [typebase.css](http://devinhunt.github.io/typebase.css/). If you want to change any settings related to typography (e.g. fonts, type scale...etc), please do it in `_scss/_typography.scss`
+Following on the way Casper styles are compiled as [described here](https://github.com/tryghost/casper#development):
 
-#### Blockquote
+Jasper2 styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node and Gulp installed globally. After that, from the theme's root directory:
 
-We have two types of blockquote design:
-
-```html
-// For large featured quote
-<blockquote class="largeQuote">...</blockquote>
-
-// For normal quote
-// Use 'u--startsWithDoubleQuote' class only when the quote starts with a double quote
-<blockquote class="u--startsWithDoubleQuote"></blockquote>
+```bash
+$ npm install
+$ gulp
 ```
 
-#### Hanging quotes
+Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
 
-If a paragraph starts with a quotation market, please add the following to support [hanging quotes](https://en.wikipedia.org/wiki/Hanging_punctuation):
+## Issues and Contributing
 
-```html
-<p class="u--startsWithDoubleQuote">
-...
-</p>
-```
+This install builds well with Ruby v2.4.2 and Jekyll v3.6.2. If you run into any problems
+please log them on the [issue tracker](https://github.com/jekyller/jasper2/issues).
 
-### Images
+Feel free pull-request your patches and fixes.
 
-To maintain vertical rhythm and spacing, I suggest using the following CSS class (e.g. `img--5xLeading`...`img--16xLeading`) to control the image height:
-
-```html
-<div class="img img--fullContainer img--14xLeading" style="background-image: url();"></div>
-```
-
-You can reference `_scss/_images.scss` for details.
-
-## Development
-
-Mickey has two branches, but only one is used for active development.
-
-- `master` for development.  **All pull requests should be submitted against `master`.**
-- `gh-pages` for our hosted landing page. **Please avoid using this branch.**
-
-During development, simply run `gulp` in terminal and it will compile the jekyll site, compile Sass, create post thumbnails, launch BrowserSync & watch files for changes and recompile.
-
-Source Sass files are located in `_scss/`, included into `main.scss`, and compile to `assets/css/main.css`.
-
-Post thumbnails are automatically resized via Gulp's image resize package, and moved to `assets/images/thumbnails`. Any featured images you put in `assets/images/hero` will be automatically created
-
-## Author
-
-**Vincent Chan**
-- <https://github.com/vincentchan>
-- <https://twitter.com/vincentchan>
+## Thanks
 
 
-## License
+Many thanks to the Ghost team for all the design work. Also many thanks to all contributors,
+that help keeping the project alive and updated :smile:
 
-Open sourced under the [MIT license](LICENSE.md).
 
-**Disclaimer: This Jekyll theme is not affiliated with Disney. Obviously :)**
+## Copyright & License
+
+Same licence as the one provided by Ghost's team. See Casper's theme [license](GHOST.txt).
+
+Copyright (C) 2015-2018 - Released under the MIT License.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
