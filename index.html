@@ -1,39 +1,63 @@
----
-layout: default
-current: home
-class: 'home-template'
-navigation: True
----
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>We Think Ideas</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href="public/js/plugins/nucleo/css/nucleo.css" rel="stylesheet">
+<link href="public/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<!--  CSS -->
+<link type="text/css" href="public/css/argon-dashboard.css?v=1.1.0" rel="stylesheet">
 
-<!-- < default -->
-<!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template -->
+</head>
 
-<!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer {% if page.cover or site.cover %}" style="background-image:  url({{ site.baseurl }}{% if page.cover %}{{ page.cover }}{% elsif site.cover %}{{ site.cover }}{% endif %}) {% else %}no-cover{% endif %}">
-    <div class="inner">
-        <div class="site-header-content">
-            <h1 class="site-title">
-                {% if site.logo %}
-                    <img class="site-logo" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.title }}"/>
-                {% else %}
-                    {{ site.title }}
-                {% endif %}
-            </h1>
-            <h2 class="site-description">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</h2>
-        </div>
-        {% include site-nav.html %}
-    </div>
-</header>
+<body style="font-family:'Lucida Grande'!important;">
+  <!--   Core   -->
+<script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+  <script src="public/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!--   Optional JS   -->
+  <!--   Argon JS   -->
+  <script src="public/js/argon-dashboard.min.js?v=1.1.0"></script>
+  <script type="text/javascript">
 
-<!-- The main content area -->
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
+function calculateScore(){
+      var popularity =  $('#popularity').val();
+      var popularityScore = popularity/10 * 1.5;
+      var frequency = $('#frequency').val();
+      var frequencyScore = frequency/10 * 3;
+      var urgency= $('#urgency').val();
+      var urgencyScore = urgency/10 * 1;
+      var cost= $('#cost').val();
+      var costScore = cost/10 * 1.5;
+      var growth= $('#growth').val();
+      var growthScore = growth/10 * 2;
+      var mandatory= $('#mandatory').val();
+      var mandatoryScore = mandatory/10 * 1;
+      var score= Math.floor(popularityScore+frequencyScore+urgencyScore+costScore+growthScore+mandatoryScore)/10 * 100;
+      $('#score_text').text("Idea Score : " + score);
+      if(score>=90){
+          $('#suggestion_text').text("That's a little too much, are you sure you are not biased? Anyways, you should build an MVP and validate your idea.")
+      } else if(score>=70){
+          $('#suggestion_text').text("Seems like you are onto the next big idea, you should build an MVP and validate your idea..")
+      } else {
+        $('#suggestion_text').text("It could be an idea for a small business. However, startup is a company that's designed to grow quickly, hence this idea might not make sense. You might have to go back to step 2.")
+      }
 
-        <div class="post-feed">
-            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
-            {%  include post-card.html %}
-        </div>
+}
 
-    </div>
-</main>
+$(document).ready(function() {
+  calculateScore();
+    $('select').change(function(){
+        calculateScore();
+    });
+});
+  </script>
+
+<center style="padding-left:25%;padding-right:25%">           <img src="public/img/ewlogo.svg" class="navbar-brand-img" style="max-height:10rem !important;margin-top: 25%" >
+
+  <p style="font-family:'Open Sans',sans-serif;font-weight:300;font-size:1.4rem;text-align:justify"> Our tool helps entrepreneurs and executives create great ideas, make beautiful products and craft powerful marketing campaigns. We enable this by bringing wisdom from books, mental models and time-tested frameworks — <a href="https://forms.gle/gGuzuqT1V4fQKVmz7"> signup here for a beta invite.</a> Meanwhile, you can try out our <a href="idea.html"> organic idea generator. </a> </p>
+ </center>
+
+</body>
+
+</html>

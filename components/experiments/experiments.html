@@ -1,0 +1,61 @@
+
+<template name="Experiments">
+
+    <div class="main-content" style="height:100%;">
+    	 		 	 <br/>
+
+
+      <div class="col-xl-10 mb-5 mb-xl-0;"  style="margin-left:5%;margin-right:5%">
+<div class="row" >
+   <div class="col-md-8" style="padding:0px">
+     <br/>
+       <br/>
+<h4 style="padding:0px !important;color:#000000;font-weight:600;font-size:1.4rem">Playground</h4>
+<p style="font-family:'Open Sans',sans-serif;font-weight:300;font-size:1rem">Playground helps you to apply mental models and frameworks for ideation, problem-solving and strategising. Here you can create experiments, define problems and structurally apply mental models and frameworks. This feature is yet to take its full shape. Stay tuned for updates. </p><button id="createExperiment" class="btn btn-icon btn-3 btn-secondary" type="button" style="font-size:14px;padding:10px !important;background-color:black">
+          <span class="btn-inner--icon" ><i class="fa fa-plus" style="top:0px !important"></i></span>
+          <span class="btn-inner--text"  >Create Experiment</span>
+        </button>
+</div>
+    <div class="col-md-4" style="float:right !important">
+<img src="/img/playground_low.png" style="height:200px;float:right"/>
+</div>
+</div>
+     <br/>
+      {{> ExperimentList}}
+
+                </div>
+                </div>
+
+</template>
+
+
+<template name="ExperimentList">
+
+
+   <div class="row" >
+
+     {{#each experiments}}
+          <div class="col-lg-4 col-md-6" id="experiment">
+            <div  class="color-swatch card shadow" style="cursor:pointer !important;border:1px solid rgba(0,0,0,.05); border-radius: .375rem; box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important">
+
+              <div class="color-swatch-body" style="background-color:#ffffff; border:2px solid black; border-radius:2px; box-shadow:5px 5px black">
+<center>
+                <div class="prop-item-wrap" style="float:none !important">
+<center>
+                  <div class="prop-item">
+
+                    <div class="value" style="color:black;font-size:14px">{{name}}</div>
+                  </div>
+</center>
+                </div>
+</center>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+
+
+
+
+        </div>
+  </template>

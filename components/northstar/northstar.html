@@ -1,0 +1,66 @@
+<template name="Northstar">
+
+
+    <div class="main-content" style="height:100%;">
+			 		 	 <br/>
+
+
+      <div class="col-xl-10 mb-5 mb-xl-0" style="margin-left:5%;margin-right:5%;">
+				<div class="row" >
+					 <div class="col-md-8" style="padding:0px">
+						 <br/>
+						 	 <br/>
+		<h4 style="padding:0px !important;color:#000000;font-weight:600;font-size:1.4rem">	North Star</h4>
+		<p style="font-family:'Open Sans',sans-serif;font-weight:300;font-size:1rem"> North star prevents you from getting lost. It helps you orient yourself towards what you want in life. Here you can set north star by writing things you want to accomplish in life.</p>
+			 </div>
+					  <div class="col-md-4" style="float:right !important">
+				<img src="/img/northstar_low.png" style="height:200px;float:right"/>
+				</div>
+				</div>
+			 		 	 <br/>
+	<div class="row" >
+		<div class="col-md-12" style="padding:0px">
+          <div class="card shadow" style="border:1px solid rgba(0,0,0,.05); border-radius: .375rem;box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important">
+            <div class="card-header border-0" style="background-color:#000000">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0" style="color:white;padding-top:4px;padding-bottom:4px;font-size:16px">North Star</h3>
+                </div>
+                <div class="col text-right">
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+
+                <tbody>
+									{{#each northstars}}
+                  <tr >
+                    <th scope="row">
+                  <input type="text" id={{_id}} placeholder="What do you want in life?" value={{direction}} style="border:none;width:100%;color: #000000!important;font-size:13px;font-weight: normal;font-family:'Lucida Grande'" />
+                    </th>
+
+                  </tr>
+									{{/each}}
+										{{#if checkSize northstars}}
+                    <tr >
+
+                      <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+
+                  <input type="text"  value="" placeholder="What do you want in life?" style="border:none;width:100%;color: #000000!important;font-size:13px;font-weight: normal;font-family:'Lucida Grande'" autofocus/>
+
+
+                      </th>
+
+                    </tr>
+	{{/if}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+					</div>
+					</div>
+        </div>
+                </div>
+
+</template>

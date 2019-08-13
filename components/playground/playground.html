@@ -1,0 +1,491 @@
+<template name="Playground">
+
+    <div class="main-content" style="height:100%;">
+      <br/>
+      <br/>
+
+      <div class="col-xl-10 mb-5 mb-xl-0">
+
+
+
+{{> SearchModel}}
+
+                    <form lpformnum="1" _lpchecked="1" style="padding:25px !important;margin-left:5%;margin-right:5%">
+
+                           <div class="pl-lg-4" style="padding-left:0px !important">
+
+    {{> ExperimentNameInput}}
+
+    {{> ProblemInput}}
+
+    {{> ApplyMentalModel}}
+
+
+
+
+<!--
+    <div class="row">
+      <div class="col-md-12">
+                                      <div class="form-group focused">
+
+                <div class="card shadow" style="border:1px solid rgba(0,0,0,.05); border-radius: .375rem; box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;margin-top:10px">
+                  <div class="card-header border-0" style="background-color:#6c757d">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <h3 class="mb-0" style="color:white;font-size:14px;">Trials</h3>
+                      </div>
+                    <div class="col text-right">
+                  <a href="#!" class="btn btn-sm btn-default" style="background-color:#ffffff;color:#6c757d;font-size:12px !important;font-weight:600 !important">Add Trial</a>
+                </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+<thead class="thead-light" >
+<tr >
+<th scope="col">Trial Name</th>
+<th scope="col">Score</th>
+<th scope="col">Actions</th>
+
+</tr>
+</thead>
+                      <tbody>
+                        <tr >
+
+                            <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                          Trial #1
+                            </th>
+  <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+50%
+  </th>
+    <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+<i class="fas fa-edit" aria-hidden="true" style="margin-right:10px;color: #6c757d"></i>
+<i class="fas fa-trash-alt" aria-hidden="true"  style="color:#6c757d"></i>
+    </th>
+                        </tr>
+                          <tr >
+
+                                <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                              Trial #2
+                                </th>
+                                      <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                                  70%
+                                      </th>
+                                        <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+<i class="fas fa-edit" aria-hidden="true" style="margin-right:10px;color: #6c757d"></i>
+<i class="fas fa-trash-alt" aria-hidden="true"  style="color:#6c757d"></i>
+                                        </th>
+
+                          </tr>  <tr >
+
+
+<th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+Trial #3
+</th>
+  <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+80%
+  </th>  <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+<i class="fas fa-edit" aria-hidden="true" style="margin-right:10px;color: #6c757d"></i>
+<i class="fas fa-trash-alt" aria-hidden="true" style="color:#6c757d" ></i>
+    </th>
+                            </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                </div>
+        </div>
+      </div>
+-->
+
+  <div class="row">
+    <div class="col-md-12">
+                                    <div class="form-group focused">
+
+              <div class="card shadow" style="border:1px solid rgba(0,0,0,.05); border-radius: .375rem; box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;margin-top:10px">
+                <div class="card-header border-0" style="background-color:#6c757d">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3 class="mb-0" style="color:white;font-size:14px">Stories</h3>
+                    </div>
+                    <div class="col text-right">
+                    </div>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <!-- Projects table -->
+                  <table class="table align-items-center table-flush">
+
+                    <tbody>
+                      <tr >
+                        <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                    <textarea placeholder="Describe how you apply the step 'Blah blah blah' to your problem." style="width:100% !important; border:none !important"></textarea>
+                        </th>
+
+
+                      </tr>
+                        <tr >
+                          <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                        Success Principles from Made to Stick
+                          </th>
+
+
+                        </tr>  <tr >
+                            <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                          Epic Principles from Power of Moments
+                            </th>
+
+
+                          </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-12">
+                                    <div class="form-group focused">
+
+              <div class="card shadow" style="border:1px solid rgba(0,0,0,.05); border-radius: .375rem; box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;margin-top:10px">
+                <div class="card-header border-0" style="background-color:#6c757d">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3 class="mb-0" style="color:white;font-size:14px">Learnings</h3>
+                    </div>
+                    <div class="col text-right">
+                    </div>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <!-- Projects table -->
+                  <table class="table align-items-center table-flush">
+
+                    <tbody>
+                      <tr >
+                        <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                     Lean Methodology
+                        </th>
+
+
+                      </tr>
+                        <tr >
+                          <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                        Success Principles from Made to Stick
+                          </th>
+
+
+                        </tr>  <tr >
+                            <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                          Epic Principles from Power of Moments
+                            </th>
+
+
+                          </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+                           </div>
+
+                           <!-- Description -->
+
+
+                         </form>
+                  </div>
+                </div>
+
+</template>
+
+
+
+<template name="ExperimentNameInput">
+ <div class="row">
+                     <div class="col-md-12">
+                       <div class="form-group focused">
+                         <label class="form-control-label" for="input-address" style="color:#6c757d !important;font-weight:500">Experiment Name</label>
+                         <input id="input-address" class="form-control form-control-alternative" placeholder="" value="" type="text" style="color:black;border:none !important;background-image: url(" data:image="">
+                       </div>
+                     </div>
+                   </div>
+</template>
+
+<template name="ProblemInput">
+ <div class="row">
+                     <div class="col-md-12">
+                       <div class="form-group focused">
+                         <label class="form-control-label" for="input-address" style="color:#6c757d !important;font-weight:500">Define the Problem</label>
+                         <input id="input-address" class="form-control form-control-alternative" placeholder="" value="" type="text" style="color:black;border:none !important;background-image: url(" data:image="">
+                       </div>
+                     </div>
+                   </div>
+</template>
+
+<template name="ApplyMentalModel">
+
+
+
+ <div class="row">
+                     <div class="col-md-12">
+                       <div class="form-group focused">
+                         <button class="btn btn-icon btn-3 btn-secondary" type="button" style="font-size:14px;padding:10px !important;" data-toggle="modal" data-target="#search_model">Apply Mental Model </button>
+                         <button class="btn btn-icon btn-3 btn-secondary" type="button" style="font-size:14px;padding:10px !important;" data-toggle="modal" data-target="#search_framework">Apply Framework </button>
+
+                       </div>
+                     </div>
+                   </div>
+</template>
+
+
+<template name="SearchModel">
+
+      <div class="modal fade" id="search_model" tabindex="-1" role="dialog" aria-labelledby="search_model"  aria-hidden="true">
+          <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+              <div class="modal-content" style="border:none !important">
+
+                  <div class="modal-header" style="background-color:#F5F5F5; border-bottom:none !important">
+                      <h6 class="modal-title" id="modal-title-default" style="
+      font-size: 13px !important; color: #6c757d !important;font-weight:600 !important">Apply Model</h6>
+                  </div>
+
+                  <div class="modal-body" style="
+      padding:20px !important; font-weight:0 !important;background-color:#F5F5F5; padding-top:5px !important; padding-bottom:1px !important">
+               <form lpformnum="1" _lpchecked="1">
+                      <!-- Address -->
+                      <div class="pl-lg-4" style="padding-left:0px !important">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group focused">
+                              <label class="form-control-label" for="input-address" style="color:#6c757d !important;font-weight:500">Search Model</label>
+                              <input id="input-name" class="form-control form-control-alternative" placeholder="" value="" type="text" style="color:black;border:none !important;">
+                              <input type="hidden" id="frameworkId" name="frameworkId" value="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Description -->
+                    </form>
+                  </div>
+                  <div class="modal-footer" style="background-color:#F5F5F5;border-top:none !important;margin-top:0 !important">
+                                                <button type="button" class="btn btn-secondary" id="addFramework" style="font-size:14px !important;padding:10px !important;">Apply Model</button>
+                        <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal" style="color:#6c757d;font-size:14px !important">Close</button>
+
+                  </div>
+</div>
+              </div>
+          </div>
+
+</template>
+
+<!--
+
+  <div class="row">
+    <div class="col-md-12">
+                                    <div class="form-group focused">
+
+              <div class="card shadow" style="border:1px solid rgba(0,0,0,.05); border-radius: .375rem; box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;margin-top:10px">
+                <div class="card-header border-0" style="background-color:#6c757d">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3 class="mb-0" style="color:white;font-size:14px">Goals</h3>
+                    </div>
+                    <div class="col text-right">
+                    </div>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+
+                    <tbody>
+                      <tr >
+                        <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                      Do harm to none
+                        </th>
+
+                      </tr>
+                        <tr >
+                          <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                        Choose long term value over short term gain
+                          </th>
+
+                        </tr>  <tr >
+                            <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                          Look for existing solutions instead of creating one from scratch
+                            </th></tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-md-12">
+                                        <div class="form-group focused">
+
+                  <div class="card shadow" style="border:1px solid rgba(0,0,0,.05); border-radius: .375rem; box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;margin-top:10px">
+                    <div class="card-header border-0" style="background-color:#6c757d">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <h3 class="mb-0" style="color:white;font-size:14px">Key Metrics</h3>
+                        </div>
+                        <div class="col text-right">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table align-items-center table-flush">
+<thead class="thead-light" >
+<tr >
+<th scope="col">Name</th>
+<th scope="col">Intented Output</th>
+</tr>
+</thead>
+                        <tbody>
+                          <tr >
+                            <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                          Breakeven Amount
+                            </th>
+                              <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                            1000
+                              </th>
+
+                          </tr>
+                            <tr >
+                              <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                            Customers
+                              </th>
+                                  <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                                200
+                                  </th>
+
+                            </tr>  <tr >
+                                <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                              Reach
+                                </th>
+
+<th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+10000
+</th>
+                              </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  </div>
+          </div>
+        </div>
+
+          <div class="row">
+            <div class="col-md-12">
+                                            <div class="form-group focused">
+
+                      <div class="card shadow" style="border:1px solid rgba(0,0,0,.05); border-radius: .375rem; box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;margin-top:10px">
+                        <div class="card-header border-0" style="background-color:#6c757d">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <h3 class="mb-0" style="color:white;font-size:14px">Mental Models</h3>
+                            </div>
+                            <div class="col text-right">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="table align-items-center table-flush">
+
+                            <tbody>
+                              <tr >
+                                <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                              First Principles
+                                </th>
+
+
+                              </tr>
+                                <tr >
+                                  <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                                Customers
+                                  </th>
+
+
+                                </tr>  <tr >
+                                    <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                                  Reach
+                                    </th>
+
+
+                                  </tr>
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      </div>
+              </div>
+            </div>
+
+
+              <div class="row">
+                <div class="col-md-12">
+                                                <div class="form-group focused">
+
+                          <div class="card shadow" style="border:1px solid rgba(0,0,0,.05); border-radius: .375rem; box-shadow:0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;margin-top:10px">
+                            <div class="card-header border-0" style="background-color:#6c757d">
+                              <div class="row align-items-center">
+                                <div class="col">
+                                  <h3 class="mb-0" style="color:white;font-size:14px">Frameworks</h3>
+                                </div>
+                                <div class="col text-right">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="table-responsive">
+                              <table class="table align-items-center table-flush">
+
+                                <tbody>
+                                  <tr >
+                                    <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                                 Lean Methodology
+                                    </th>
+
+
+                                  </tr>
+                                    <tr >
+                                      <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                                    Success Principles from Made to Stick
+                                      </th>
+
+
+                                    </tr>  <tr >
+                                        <th scope="row" style="color: #000000!important;font-family:'Lucida Grande' !important; font-size:13px; font-weight: normal;">
+                                      Epic Principles from Power of Moments
+                                        </th>
+
+
+                                      </tr>
+
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+    -->
